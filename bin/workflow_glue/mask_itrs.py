@@ -150,8 +150,8 @@ def mask_itrs(transgene_plasmid_fasta, itr_locations):
     itr2_seq = ref[itr2_start_pos: itr2_end_pos].upper()
 
     # Identify parts of the ITR
-    itr1_mask_regions = [x + itr1_start_pos for x in get_variable_itr_regions(itr1_seq)]
-    itr2_mask_regions = [x + itr2_start_pos for x in get_variable_itr_regions(itr2_seq)]
+    itr1_mask_regions = [itr1_end_pos - itr1_start_pos]
+    itr2_mask_regions = [itr2_end_pos - itr2_start_pos]
 
     logger.info(f'masking ITR1 variable regions: {itr1_mask_regions}')
     logger.info(f'masking ITR2 variable regions: {itr2_mask_regions}')
